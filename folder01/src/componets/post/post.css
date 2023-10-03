@@ -34,8 +34,11 @@
     font-weight: 700;
     margin-top: 15px;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 
  }
+ 
 
  .postData {
     font-family: 'Lora' , serif;
