@@ -1,24 +1,37 @@
 import React from 'react'
 import "./post.css"
-import { Link } from 'react-router-dom'
+import {Link} from "react-router-dom"
 
-export default function Post() {
+
+export default function Post({post}) {
   return (
     <div className='post'>
-        <img className='postImg' src='https://scx2.b-cdn.net/gfx/news/hires/2019/1-evolution.jpg'
-        alt=''/>
-
+      {post.photo && (
+        <img className='postImg' 
+        src={post.photo}
+        alt=''
+        />
+      )}
+        
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat">Life</span>
+              {post.categories.map((c) => (
+                   <span className="postCat">(c.name)</span>
+              ))}
+               
             </div>
+            <Link to={`/posts/${post._id}`}className='link'> 
             <span className="postTitle">
-            <Link to ="/singlePosts">Exploring the Beauty and Complexity of Human Existence </Link>
+                {post.title}
             </span>
+            </Link>
+
               <hr/>
-              <span className="postData">1 hour ago</span>
+              <span className="postData">{new Date(post.createdAt).toDateString()}</span>
         </div>
-        <p className='postDescription'>This exploration takes us on a profound journey through the multifaceted dimensions of human life. It's a deep dive into the intricate interplay of emotions, relationships, aspirations, and the very essence of what it means to be human. From the mundane to the extraordinary, this journey reveals the beauty and depth of human existence in all its glory and complexity.</p>
+        <p className='postDescription'>
+          {post.desc}
+        </p> 
     </div>
   )
 }
