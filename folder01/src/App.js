@@ -6,6 +6,7 @@ import Setting from "./pages/setting/Setting"
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import SinglePosts from "./componets/singlePosts/SinglePosts";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/login" element={user ? <Home/> : <Login/>}/>
       <Route path="/write" element={user ? <Write/> : <Register/>}/>
       <Route path="/setting" element={user ? <Setting/> : <Register/>}/>
+      <Route path="/posts/:id" element={<SinglePosts/>} />
     
       
     </Routes>

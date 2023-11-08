@@ -19,20 +19,7 @@ export default function SinglePosts() {
     getPost()
   }, [path]);
 
-  export default function SinglePosts() {
-    const location = useLocation()
-    const path = location.pathname.split("/")[2];
-    const [post, setPost] = useState({})
-    
-    useEffect(() => {
-      const getPost = async () => {
-        const res = await axios.get(`http://localhost:5000/api/posts/${path}`);
-        setPost(res.data)
-        console.log(res)
-      };
-      getPost()
-    }, [path]);
-    
+
   return (
     <div className='SinglePosts'>
         <div className="singlePostWrapper">

@@ -4,6 +4,7 @@ import "./write.css"
 export default function Write() {
   return (
     <div className='write'>
+        <img className ="writeImg" src="https://scx2.b-cdn.net/gfx/news/hires/2019/1-evolution.jpg" alt="" />
         <form className="writeForm">
             <div className="writeFormGroup">
                 <label htmlFor="fileInput">
